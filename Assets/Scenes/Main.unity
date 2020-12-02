@@ -912,7 +912,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3657,11 +3657,22 @@ MonoBehaviour:
   - You're my favorite Kurator.
   - 'Did you know: Penguins have knees!'
   - Go Golden Bears!
-  - DO NOT DRINK BLEACH
+  - DO NOT INJECT BLEACH
   - We disinfected so you don't have to!
   - Show off your art!
   - Price of admission? FREE
   - Stay Safe, Stay Strong.
+  - It's good to be golden.
+  - We have the protein
+  - I'm enjoying it
+  - Welcome to flavortown
+  - The load was worth the wait.
+  - This is a rough prototype
+  - It's good to be golden.
+  - It's good to be golden.
+  - It's good to be golden.
+  - It's good to be golden.
+  - It's good to be golden.
 --- !u!1 &1944315178
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,7 +3793,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
