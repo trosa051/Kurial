@@ -9909,7 +9909,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1.1
-  m_Text: Stay Safe, Stay Strong.
+  m_Text: Enjoy your stay!
 --- !u!222 &1816441851
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10215,7 +10215,7 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'In the future this will be the page where one can search for kurations
