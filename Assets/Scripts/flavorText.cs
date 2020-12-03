@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[ExecuteInEditMode]
 public class flavorText : MonoBehaviour
 {
         public Text flavor; 
         public string[] quips;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         flavor.text = quips[Random.Range(0,quips.Length)];
     }
@@ -17,6 +18,6 @@ public class flavorText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //flavor.text = quips[Random.Range(0,quips.Length)];
     }
 }
