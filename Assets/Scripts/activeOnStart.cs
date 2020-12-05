@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class activeOnStart : MonoBehaviour
 {
     [SerializeField]
-    private bool StartActive;
+    private bool StartActive = false;
 
     void Start()
     {
