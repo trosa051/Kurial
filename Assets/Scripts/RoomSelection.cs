@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RoomSelection : MonoBehaviour
 {
     [SerializeField]
     Dropdown roomType = null;
+    [SerializeField]
+    Button vech = null;
     [SerializeField]
     GameObject[] Sels = null;
     
@@ -47,6 +50,31 @@ public class RoomSelection : MonoBehaviour
             Debug.Log("Default case");
             break;
       }
+    }
+
+    public void TaskOnClick()
+    {
+    switch (roomType.value)
+    {
+        case 0: //3
+            SceneManager.LoadScene(2);
+            break;
+        case 1:
+            SceneManager.LoadScene(3);
+            break;
+        case 2:
+            SceneManager.LoadScene(4);
+            break;
+        case 3:
+            SceneManager.LoadScene(5);
+            break;
+        case 4:
+            SceneManager.LoadScene(6);
+            break;
+            default:
+            Debug.Log("Nope, Chuck Testa");
+            break;
+        }
     }
 }
  

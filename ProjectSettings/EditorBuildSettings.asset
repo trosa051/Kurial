@@ -8,7 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/nasaRoom.unity
     guid: bda85f4a93172e248aa18eafdd1e1234
+  - enabled: 1
+    path: Assets/Scenes/kurationCreation.unity
+    guid: 5a73026ab416b064fb6058cf9e3e4164
+  - enabled: 1
+    path: Assets/Scenes/testScenes/tjsRoom.unity
+    guid: 35fc32ad7c7ea8540bc411302a30b1af
+  - enabled: 1
+    path: Assets/Scenes/testScenes/coltonRoom.unity
+    guid: ed0602c246ff3eb4499efbab62071171
+  - enabled: 1
+    path: Assets/Scenes/testScenes/tonysRoom.unity
+    guid: b514ddea6a99fd244bc9d25438dde77c
+  - enabled: 1
+    path: Assets/Scenes/testScenes/reedRoom.unity
+    guid: ddc35357bbb06ff44875756df8cd2816
+  - enabled: 1
+    path: Assets/Scenes/testScenes/jeffRoom.unity
+    guid: f6728be4fdf4b154aaf174ea1a2b379f
   m_configObjects: {}
