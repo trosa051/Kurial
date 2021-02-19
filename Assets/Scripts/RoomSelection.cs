@@ -9,8 +9,6 @@ public class RoomSelection : MonoBehaviour
     [SerializeField]
     Dropdown roomType = null;
     [SerializeField]
-    Button vech = null;
-    [SerializeField]
     GameObject[] Sels = null;
     
     // Start is called before the first frame update
@@ -45,6 +43,9 @@ public class RoomSelection : MonoBehaviour
             break;
         case 4:
             Sels[4].SetActive(true);
+            break;        
+        case 5:
+            Sels[5].SetActive(true);
             break;
           default:
             Debug.Log("Default case");
@@ -70,8 +71,11 @@ public class RoomSelection : MonoBehaviour
             break;
         case 4:
             SceneManager.LoadScene(6);
+            break;        
+        case 5:
+            SceneManager.LoadScene(7);
             break;
-            default:
+        default:
             Debug.Log("Nope, Chuck Testa");
             break;
         }
