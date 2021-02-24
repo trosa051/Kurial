@@ -57,7 +57,7 @@ public class RoomSelection : MonoBehaviour
     {
     switch (roomType.value)
     {
-        case 0: //3
+        case 0: //2
             SceneManager.LoadScene(2);
             break;
         case 1:
