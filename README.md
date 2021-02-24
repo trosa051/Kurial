@@ -1,2 +1,2 @@
 # Kurial
-## Virtual Spaces
+User generated virtual art exhibits powered by Unity.
