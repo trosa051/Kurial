@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿/*
+  Author        :    TJ Rosario-Rosa
+  Project		:	 Kurial
+  Creation Date :    ?
+  Due Date		:    ?
+  Course		:    CSC 355
+  Professor Name:    Dr. Hussain
+  Assignment	:    Capstone
+  Filename		:    activeOnDisable.cs
+  Purpose		:    allows the user to select a room to enter
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

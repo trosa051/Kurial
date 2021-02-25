@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/*
+  Author        :    TJ Rosario-Rosa
+  Project		:	 Kurial
+  Creation Date :    ?
+  Due Date		:    ?
+  Course		:    CSC 355
+  Professor Name:    Dr. Hussain
+  Assignment	:    Capstone
+  Filename		:    rot.cs
+  Purpose		:    rotates template rooms in selection screen
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

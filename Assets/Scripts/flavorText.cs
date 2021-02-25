@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿/*
+  Author        :    TJ Rosario-Rosa
+  Project		:	 Kurial
+  Creation Date :    ?
+  Due Date		:    ?
+  Course		:    CSC 355
+  Professor Name:    Dr. Hussain
+  Assignment	:    Capstone
+  Filename		:    flavorText.cs
+  Purpose		:    Outputs a random phrase to the user
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

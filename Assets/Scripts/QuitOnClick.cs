@@ -1,5 +1,14 @@
-﻿//Katie
-
+﻿/*
+  Author        :    TJ Rosario-Rosa
+  Project		:	 Kurial
+  Creation Date :    ?
+  Due Date		:    ?
+  Course		:    CSC 355
+  Professor Name:    Dr. Hussain
+  Assignment	:    Capstone
+  Filename		:    QuitOnClick.cs
+  Purpose		:    quits the program
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

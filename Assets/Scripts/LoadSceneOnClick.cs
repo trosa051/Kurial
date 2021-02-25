@@ -1,5 +1,14 @@
-﻿//Katie
-
+﻿/*
+  Author        :    TJ Rosario-Rosa
+  Project		:	 Kurial
+  Creation Date :    ?
+  Due Date		:    ?
+  Course		:    CSC 355
+  Professor Name:    Dr. Hussain
+  Assignment	:    Capstone
+  Filename		:    LoadSceneOnClick.cs
+  Purpose		:    Used to transition between scenes
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
