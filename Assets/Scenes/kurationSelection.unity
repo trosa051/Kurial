@@ -1773,17 +1773,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ddd2b9ef554b13a489bfaf94cfeb28b0,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddd2b9ef554b13a489bfaf94cfeb28b0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ddd2b9ef554b13a489bfaf94cfeb28b0,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ddd2b9ef554b13a489bfaf94cfeb28b0,
         type: 3}
@@ -2318,6 +2318,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ccef2c82fbdb740b4b65bfc37a409a, type: 3}
+--- !u!1 &1674888142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674888144}
+  - component: {fileID: 1674888143}
+  m_Layer: 0
+  m_Name: _manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1674888143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674888142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7dab64d28c9029409212a944bcb8e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setRoom: 5
+--- !u!4 &1674888144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674888142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1873219037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2536,8 @@ MonoBehaviour:
   - {fileID: 1064918318}
   - {fileID: 1555482956}
   - {fileID: 1379495634}
+  choice: {fileID: 0}
+  selectionObj: {fileID: 0}
 --- !u!1 &1912826934
 GameObject:
   m_ObjectHideFlags: 0

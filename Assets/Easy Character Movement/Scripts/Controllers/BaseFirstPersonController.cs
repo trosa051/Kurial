@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace ECM.Controllers
 {
@@ -32,6 +33,10 @@ namespace ECM.Controllers
         [SerializeField]
         private float _runSpeedMultiplier = 2.0f;
 
+        [Tooltip("Speed multiplier while running.")]
+        [SerializeField]
+        private Canvas PauseCanvas;
+
         #endregion
 
         #region PROPERTIES
@@ -53,6 +58,15 @@ namespace ECM.Controllers
         /// </summary>
 
         public Components.MouseLook mouseLook { get; private set; }
+
+        //TJ
+        /*
+        /// <summary>
+        /// Pause Screen canvas.
+        /// </summary>
+        [SerializeField]
+        public Canvas PauseCanvas { get; private set; }
+        */
 
         /// <summary>
         /// Speed when moving forward.
@@ -196,9 +210,21 @@ namespace ECM.Controllers
         {
             // Toggle pause / resume.
             // By default, will restore character's velocity on resume (eg: restoreVelocityOnResume = true)
-
-            if (Input.GetKeyDown(KeyCode.P))
+            //TJ
+           /*
+            if (Input.GetKeyDown(KeyCode.Escape)){
+                PauseCanvas.enabled = !PauseCanvas.enabled;
+                if(mouseLook.lockCursor == true) mouseLook.SetCursorLock(false);
+                else if(mouseLook.lockCursor == false) mouseLook.SetCursorLock(true);
                 pause = !pause;
+            }
+           */
+                if (Input.GetKeyDown(KeyCode.Escape)){
+                PauseCanvas.enabled = true;
+                mouseLook.SetCursorLock(false);
+                pause = true;
+            }
+
 
             // Player input
 
@@ -248,6 +274,7 @@ namespace ECM.Controllers
             // Call the parent class' version of method
 
             base.Awake();
+            PauseCanvas.enabled = false;
 
             // Cache and initialize this components
 
@@ -265,6 +292,15 @@ namespace ECM.Controllers
             {
                 Debug.LogError(string.Format(
                     "BaseFPSController: No 'Camera_Pivot' found. Please parent a transform gameobject to '{0}' game object.",
+                    name));
+            }
+
+            //TJ
+            PauseCanvas = GetComponentInChildren<Canvas>();
+            if (cameraPivotTransform == null)
+            {
+                Debug.LogError(string.Format(
+                    "BaseFPSController: No 'PauseCanvas' found. Please parent a transform gameobject to '{0}' game object.",
                     name));
             }
 

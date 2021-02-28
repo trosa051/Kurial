@@ -17,15 +17,30 @@ using UnityEngine.SceneManagement;
 
 public class RoomSelection : MonoBehaviour
 {
+    public enum Name
+    {
+        TJ,
+        Colton,
+        Tony,
+        Reed,
+        Jeff,
+        dflt
+    }
+
     [SerializeField]
     Dropdown roomType = null;
     [SerializeField]
     GameObject[] Sels = null;
+
+    public sel choice;
+    public GameObject selectionObj;
     
     // Start is called before the first frame update
     void Start()
     {
         roomType.value = 0;
+        selectionObj = GameObject.Find("_manager");
+        choice = selectionObj.GetComponent<sel>();
         Changed();
     }
 
@@ -42,31 +57,39 @@ public class RoomSelection : MonoBehaviour
       {
         case 0:
             Sels[0].SetActive(true);
+            choice.setRoom = sel.Name.TJ;
             break;
         case 1:
             Sels[1].SetActive(true);
+            choice.setRoom = sel.Name.Colton;
             break;
         case 2:
             Sels[2].SetActive(true);
+            choice.setRoom = sel.Name.Tony;
             break;
         case 3:
             Sels[3].SetActive(true);
+            choice.setRoom = sel.Name.Reed;
             break;
         case 4:
             Sels[4].SetActive(true);
+            choice.setRoom = sel.Name.Jeff;
             break;        
         case 5:
             Sels[5].SetActive(true);
+            choice.setRoom = sel.Name.dflt;
             break;
           default:
             Debug.Log("Default case");
+            choice.setRoom = sel.Name.dflt;
             break;
       }
     }
 
     public void TaskOnClick()
     {
-    switch (roomType.value)
+        SceneManager.LoadScene(2);
+    /*switch (roomType.value)
     {
         case 0: //2
             SceneManager.LoadScene(2);
@@ -89,7 +112,7 @@ public class RoomSelection : MonoBehaviour
         default:
             Debug.Log("Nope, Chuck Testa");
             break;
-        }
+        }*/
     }
 }
  
