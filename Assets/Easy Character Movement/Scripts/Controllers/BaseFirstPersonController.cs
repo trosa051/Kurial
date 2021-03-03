@@ -33,9 +33,14 @@ namespace ECM.Controllers
         [SerializeField]
         private float _runSpeedMultiplier = 2.0f;
 
-        [Tooltip("Speed multiplier while running.")]
+
+        [Header("Canvses")]
         [SerializeField]
-        private Canvas PauseCanvas;
+        [Tooltip("Canvas activated by tapping Escape.")]
+        private Canvas PauseCanvas;        
+        [SerializeField]
+        [Tooltip("Canvas activated by tapping E.")]
+        private Canvas PlaceArtCanvas;
 
         #endregion
 
@@ -223,6 +228,11 @@ namespace ECM.Controllers
                 PauseCanvas.enabled = true;
                 mouseLook.SetCursorLock(false);
                 pause = true;
+                }
+                if (Input.GetKeyDown(KeyCode.E)){
+                PlaceArtCanvas.enabled = true;
+                mouseLook.SetCursorLock(false);
+                pause = true;
             }
 
 
@@ -275,6 +285,7 @@ namespace ECM.Controllers
 
             base.Awake();
             PauseCanvas.enabled = false;
+            PlaceArtCanvas.enabled = false;
 
             // Cache and initialize this components
 
