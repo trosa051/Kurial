@@ -3,22 +3,20 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class KuratorSys : MonoBehaviour
 {
-	[SerializeField] string URL;
-	//WWWForm login;
-	[SerializeField] InputField Username;
+	[SerializeField] InputField Email;
 	[SerializeField] InputField Password;
 	[SerializeField] Button LoginButton;
 	
 	[SerializeField] Text ErrorMessage;
 	
-	WWWForm form;
-
+	
 	public void KuratorLogin(){
 		LoginButton.interactable = false;
 		StartCoroutine (Login());
@@ -26,28 +24,24 @@ public class KuratorSys : MonoBehaviour
 	}
 	
 	IEnumerator Login(){
-		form = new WWWForm ();
-		form.AddField("username", Username.text);
-		form.AddField("password", Password.text);
+		WWWForm Kurial = new WWWForm();
+		Kurial.AddField("email", Email.text);
+		Kurial.AddField("password", Password.text);
 		
-		WWW Kurial = new WWW (URL, form);
-		yield return Kurial;
-		
-		if (Kurial.error != null) {
-			ErrorMessage.text = "error";
-			Debug.Log("<color=red>"+Kurial.text+"</color>");
-		} else {
-			if (Kurial.isDone) {
-				if (Kurial.text.Contains ("error")) {
-					ErrorMessage.text = "invalid username or password!";
-					Debug.Log("<color=red>"+Kurial.text+"</color>");//error
-				} else {
-					SceneManager.LoadScene(0);
-					Debug.Log("<color=green>"+Kurial.text+"</color>");//user exist
-				}
-			}
+		using (UnityWebRequest www = UnityWebRequest.Post("http://kurial.space/php/login.php", Kurial))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
+            }
 		}
-		
+				
 		LoginButton.interactable = true;
 		Kurial.Dispose();
 		
