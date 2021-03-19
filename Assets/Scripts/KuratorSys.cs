@@ -3,13 +3,13 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Networking;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.Networking;
 public class KuratorSys : MonoBehaviour
 {
+	
 	[SerializeField] InputField Email;
 	[SerializeField] InputField Password;
 	[SerializeField] Button LoginButton;
@@ -28,22 +28,21 @@ public class KuratorSys : MonoBehaviour
 		Kurial.AddField("email", Email.text);
 		Kurial.AddField("password", Password.text);
 		
-		using (UnityWebRequest www = UnityWebRequest.Post("http://kurial.space/php/login.php", Kurial))
+		var kurator = UnityWebRequest.Post("http://kurial.space/php/login.php", Kurial);
+        
+        yield return kurator.SendWebRequest();
+//getting error for result not existing and im lost
+//reference https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest.Post.html
+        if (kurator.result != UnityWebRequest.Result.Success)
+		{
+			Debug.Log(kurator.error);
+        }
+        else
         {
-            yield return www.SendWebRequest();
-
-            if (www.result != UnityWebRequest.Result.Success)
-            {
-                Debug.Log(www.error);
-            }
-            else
-            {
-                Debug.Log("Form upload complete!");
-            }
-		}
-				
-		LoginButton.interactable = true;
-		Kurial.Dispose();
+			Debug.Log("Form upload complete!");
+        }
 		
+		LoginButton.interactable = true;
+				
 	}
 }
