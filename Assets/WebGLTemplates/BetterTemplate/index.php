@@ -1,3 +1,24 @@
+<!--
+
+           █     █░▓█████ ▄▄▄       ██▀███      ▄▄▄          ███▄ ▄███▓ ▄▄▄        ██████  ██ ▄█▀
+          ▓█░ █ ░█░▓█   ▀▒████▄    ▓██ ▒ ██▒   ▒████▄       ▓██▒▀█▀ ██▒▒████▄    ▒██    ▒  ██▄█▒ 
+          ▒█░ █ ░█ ▒███  ▒██  ▀█▄  ▓██ ░▄█ ▒   ▒██  ▀█▄     ▓██    ▓██░▒██  ▀█▄  ░ ▓██▄   ▓███▄░ 
+          ░█░ █ ░█ ▒▓█  ▄░██▄▄▄▄██ ▒██▀▀█▄     ░██▄▄▄▄██    ▒██    ▒██ ░██▄▄▄▄██   ▒   ██▒▓██ █▄ 
+          ░░██▒██▓ ░▒████▒▓█   ▓██▒░██▓ ▒██▒    ▓█   ▓██▒   ▒██▒   ░██▒ ▓█   ▓██▒▒██████▒▒▒██▒ █▄
+          ░ ▓░▒ ▒  ░░ ▒░ ░▒▒   ▓▒█░░ ▒▓ ░▒▓░    ▒▒   ▓▒█░   ░ ▒░   ░  ░ ▒▒   ▓▒█░▒ ▒▓▒ ▒ ░▒ ▒▒ ▓▒
+            ▒ ░ ░   ░ ░  ░ ▒   ▒▒ ░  ░▒ ░ ▒░     ▒   ▒▒ ░   ░  ░      ░  ▒   ▒▒ ░░ ░▒  ░ ░░ ░▒ ▒░
+            ░   ░     ░    ░   ▒     ░░   ░      ░   ▒      ░      ░     ░   ▒   ░  ░  ░  ░ ░░ ░ 
+              ░       ░  ░     ░  ░   ░              ░  ░          ░         ░  ░      ░  ░  ░   
+    
+      Kurial was made for Kutztown University's CSC 354/355: Software Engineering 
+    
+       Project Manager | IT | Perlmutter, Jeff
+             Developer | CS | Rosario-Rosa, Tj
+      Systems Designer | IT | Guzman, Anthony
+       Systems Analyst | IT | Kunz, Colton
+            SQA Tester | IT | Ellis, Reed
+-->
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
@@ -16,7 +37,7 @@
       }
       body {
         margin: 0;
-        background: #444;
+        background: #FDEDDB;
       }
       #gameContainer {
         width: 100vw;
@@ -73,9 +94,9 @@
         font-size: 10px;
         position: relative;
         text-indent: -9999em;
-        border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-        border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-        border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+        border-top: 1.1em solid #FDEDDB;
+        border-right: 1.1em solid #FDEDDB;
+        border-bottom: 1.1em solid #FDEDDB;
         border-left: 1.1em solid #ffffff;
         transform: translateZ(0);
         animation: spinner-spin 1.1s infinite linear;
@@ -93,27 +114,9 @@
   </head>
 
   <body>
-    <script>
-      /* 
-           █     █░▓█████ ▄▄▄       ██▀███      ▄▄▄          ███▄ ▄███▓ ▄▄▄        ██████  ██ ▄█▀
-          ▓█░ █ ░█░▓█   ▀▒████▄    ▓██ ▒ ██▒   ▒████▄       ▓██▒▀█▀ ██▒▒████▄    ▒██    ▒  ██▄█▒ 
-          ▒█░ █ ░█ ▒███  ▒██  ▀█▄  ▓██ ░▄█ ▒   ▒██  ▀█▄     ▓██    ▓██░▒██  ▀█▄  ░ ▓██▄   ▓███▄░ 
-          ░█░ █ ░█ ▒▓█  ▄░██▄▄▄▄██ ▒██▀▀█▄     ░██▄▄▄▄██    ▒██    ▒██ ░██▄▄▄▄██   ▒   ██▒▓██ █▄ 
-          ░░██▒██▓ ░▒████▒▓█   ▓██▒░██▓ ▒██▒    ▓█   ▓██▒   ▒██▒   ░██▒ ▓█   ▓██▒▒██████▒▒▒██▒ █▄
-          ░ ▓░▒ ▒  ░░ ▒░ ░▒▒   ▓▒█░░ ▒▓ ░▒▓░    ▒▒   ▓▒█░   ░ ▒░   ░  ░ ▒▒   ▓▒█░▒ ▒▓▒ ▒ ░▒ ▒▒ ▓▒
-            ▒ ░ ░   ░ ░  ░ ▒   ▒▒ ░  ░▒ ░ ▒░     ▒   ▒▒ ░   ░  ░      ░  ▒   ▒▒ ░░ ░▒  ░ ░░ ░▒ ▒░
-            ░   ░     ░    ░   ▒     ░░   ░      ░   ▒      ░      ░     ░   ▒   ░  ░  ░  ░ ░░ ░ 
-              ░       ░  ░     ░  ░   ░              ░  ░          ░         ░  ░      ░  ░  ░   
-    
-      Kurial was made for Kutztown University's CSC 354: Software Engineering 
-    
-       Project Manager | IT | Perlmutter, Jeff
-             Developer | CS | Rosario-Rosa, Tj, trosa051@live.kutztown.edu
-      Systems Designer | IT | Guzman, Anthony
-       Systems Analyst | IT | Kunz, Colton
-            SQA Tester | IT | Ellis, Reed
-      */
-      </script>
+  <?Php
+    include_once 'php/ipdateOOP.php';
+  ?> 
     <div id="gameContainer"></div>
     <div id="loader">
       <img class="logo" src="logo.png">

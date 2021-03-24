@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 21659099}
   - component: {fileID: 21659098}
   - component: {fileID: 21659101}
+  - component: {fileID: 21659102}
   m_Layer: 5
   m_Name: Username
   m_TagString: Untagged
@@ -331,7 +332,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 613821645}
+        m_MethodName: VerifyInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -389,6 +401,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inpField: {fileID: 21659098}
+--- !u!114 &21659102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21659096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b4e2562403f3742ae95032c2d9d972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextField: {fileID: 474345309}
 --- !u!1 &24324591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,7 +2176,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[Not functioning yet]'
+  m_Text: Passwords do not match
 --- !u!222 &318228497
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2674,6 +2699,7 @@ GameObject:
   - component: {fileID: 474345310}
   - component: {fileID: 474345309}
   - component: {fileID: 474345312}
+  - component: {fileID: 474345313}
   m_Layer: 5
   m_Name: Password
   m_TagString: Untagged
@@ -2757,7 +2783,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 613821645}
+        m_MethodName: VerifyInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -2815,6 +2852,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inpField: {fileID: 474345309}
+--- !u!114 &474345313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474345307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b4e2562403f3742ae95032c2d9d972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextField: {fileID: 1701723574}
 --- !u!1 &496273775
 GameObject:
   m_ObjectHideFlags: 0
@@ -3557,6 +3607,7 @@ GameObject:
   - component: {fileID: 613821642}
   - component: {fileID: 613821641}
   - component: {fileID: 613821640}
+  - component: {fileID: 613821645}
   m_Layer: 5
   m_Name: Sign Up Canvas
   m_TagString: Untagged
@@ -3659,6 +3710,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &613821645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613821639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a961fd734310cce4da2a3eb78bb9092f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameField: {fileID: 21659098}
+  passwordField: {fileID: 474345309}
+  confirmPWField: {fileID: 1701723574}
+  passwordWarning: {fileID: 318228493}
+  submitButton: {fileID: 2051329644}
 --- !u!1 &633987594
 GameObject:
   m_ObjectHideFlags: 0
@@ -4151,7 +4219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 13}
+  m_AnchoredPosition: {x: 0, y: -1607}
   m_SizeDelta: {x: 191.2, y: 9.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &670122293
@@ -5466,9 +5534,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1582954458}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1953182798}
+        m_MethodName: callLogin
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5990,6 +6058,7 @@ GameObject:
   - component: {fileID: 993634468}
   - component: {fileID: 993634467}
   - component: {fileID: 993634470}
+  - component: {fileID: 993634471}
   m_Layer: 5
   m_Name: InputField
   m_TagString: Untagged
@@ -6131,6 +6200,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inpField: {fileID: 993634467}
+--- !u!114 &993634471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993634465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b4e2562403f3742ae95032c2d9d972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextField: {fileID: 1789830638}
 --- !u!1 &1001345439
 GameObject:
   m_ObjectHideFlags: 0
@@ -6212,6 +6294,7 @@ GameObject:
   - component: {fileID: 1016565171}
   - component: {fileID: 1016565170}
   - component: {fileID: 1016565173}
+  - component: {fileID: 1016565174}
   m_Layer: 5
   m_Name: EmailBody
   m_TagString: Untagged
@@ -6353,6 +6436,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inpField: {fileID: 1016565170}
+--- !u!114 &1016565174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016565168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b4e2562403f3742ae95032c2d9d972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextField: {fileID: 993634467}
 --- !u!1 &1035347318
 GameObject:
   m_ObjectHideFlags: 0
@@ -6517,6 +6613,7 @@ GameObject:
   - component: {fileID: 1107744868}
   - component: {fileID: 1107744867}
   - component: {fileID: 1107744870}
+  - component: {fileID: 1107744871}
   m_Layer: 5
   m_Name: Username
   m_TagString: Untagged
@@ -6600,7 +6697,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953182798}
+        m_MethodName: VerifyInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -6658,6 +6766,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inpField: {fileID: 1107744867}
+--- !u!114 &1107744871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107744865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b4e2562403f3742ae95032c2d9d972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextField: {fileID: 1627105246}
 --- !u!1 &1114040580
 GameObject:
   m_ObjectHideFlags: 0
@@ -8813,6 +8934,7 @@ GameObject:
   - component: {fileID: 1627105247}
   - component: {fileID: 1627105246}
   - component: {fileID: 1627105249}
+  - component: {fileID: 1627105250}
   m_Layer: 5
   m_Name: Password
   m_TagString: Untagged
@@ -8896,7 +9018,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953182798}
+        m_MethodName: VerifyInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -8954,6 +9087,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inpField: {fileID: 1627105246}
+--- !u!114 &1627105250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627105244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b4e2562403f3742ae95032c2d9d972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextField: {fileID: 1107744867}
 --- !u!1 &1627939495
 GameObject:
   m_ObjectHideFlags: 0
@@ -9490,6 +9636,7 @@ GameObject:
   - component: {fileID: 1701723575}
   - component: {fileID: 1701723574}
   - component: {fileID: 1701723577}
+  - component: {fileID: 1701723578}
   m_Layer: 5
   m_Name: Reenter Password
   m_TagString: Untagged
@@ -9573,7 +9720,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 613821645}
+        m_MethodName: VerifyInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -9631,6 +9789,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inpField: {fileID: 1701723574}
+--- !u!114 &1701723578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701723572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b4e2562403f3742ae95032c2d9d972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextField: {fileID: 21659098}
 --- !u!1 &1705850149
 GameObject:
   m_ObjectHideFlags: 0
@@ -10271,6 +10442,7 @@ GameObject:
   - component: {fileID: 1789830639}
   - component: {fileID: 1789830638}
   - component: {fileID: 1789830641}
+  - component: {fileID: 1789830642}
   m_Layer: 5
   m_Name: InputField (1)
   m_TagString: Untagged
@@ -10412,6 +10584,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inpField: {fileID: 1789830638}
+--- !u!114 &1789830642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789830636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b4e2562403f3742ae95032c2d9d972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextField: {fileID: 1016565170}
 --- !u!1 &1793089056
 GameObject:
   m_ObjectHideFlags: 0
@@ -10639,7 +10824,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1.1
-  m_Text: Stay Safe, Stay Strong.
+  m_Text: DO NOT INJECT BLEACH
 --- !u!222 &1816441851
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11041,6 +11226,7 @@ GameObject:
   - component: {fileID: 1953182794}
   - component: {fileID: 1953182793}
   - component: {fileID: 1953182797}
+  - component: {fileID: 1953182798}
   m_Layer: 5
   m_Name: Login Canvas
   m_TagString: Untagged
@@ -11144,6 +11330,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartActive: 0
+--- !u!114 &1953182798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953182792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4a76247fbc63b4cb832ab7203c7971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameField: {fileID: 1107744867}
+  passwordField: {fileID: 1627105246}
+  submitButton: {fileID: 895489046}
 --- !u!1 &1977279497
 GameObject:
   m_ObjectHideFlags: 0
@@ -12089,9 +12290,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 318228493}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 613821645}
+        m_MethodName: callRegister
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
