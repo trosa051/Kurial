@@ -21,13 +21,6 @@ public class flavorText : MonoBehaviour
         public string[] quips;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    // Start is called before the first frame update
     void OnEnable()
     {
         flavor.text = quips[Random.Range(0,quips.Length)];

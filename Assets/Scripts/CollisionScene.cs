@@ -31,6 +31,6 @@ public class CollisionScene : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
 }

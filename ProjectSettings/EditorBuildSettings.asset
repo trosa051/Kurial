@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/nasaRoom.unity
     guid: bda85f4a93172e248aa18eafdd1e1234
+  - enabled: 1
+    path: Assets/Scenes/userLanding.unity
+    guid: 5c0234604d7bd0b40a4c02de266d1f52
   m_configObjects: {}

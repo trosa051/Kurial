@@ -38,6 +38,11 @@ public class RoomSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (GameObject i in Sels){
+        i.SetActive(true);
+        i.SetActive(false);
+    }
+
         roomType.value = 0;
         selectionObj = GameObject.Find("_manager");
         choice = selectionObj.GetComponent<sel>();
@@ -84,6 +89,7 @@ public class RoomSelection : MonoBehaviour
             choice.setRoom = sel.Name.dflt;
             break;
       }
+      Sels[roomType.value].SetActive(true);
     }
 
     public void TaskOnClick()
