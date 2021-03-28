@@ -7,17 +7,23 @@ using UnityEngine.SceneManagement;
 public class accountLanding : MonoBehaviour
 {
 
+    public InputField kurationNameField;
+    //public Dropdown templateField;
+    public Dropdown roomType;
+    public Toggle visToggle;
+
+    public Button createButton;
+
     public Text playerDisplay;
     //public Text scoreDisplay;
-
+    
+    
     private void Awake(){
         if (DBManager.username == null ){
             SceneManager.LoadScene(0);
         }
         playerDisplay.text = "Welcome " + DBManager.username;
-        //scoreDisplay.text = "Score: " + DBManager.score;
     }
-    
     public void logoutAndBringBack()
     {
         DBManager.Logout();
@@ -26,35 +32,46 @@ public class accountLanding : MonoBehaviour
 
     public void callCreateKuration()
     {
-        //StartCoroutine(CreateKuration());
+        StartCoroutine(CreateKuration());
     }
 
-/*
- IEnumerator SavePlayerData()
+
+    IEnumerator CreateKuration()
     {
         WWWForm form = new WWWForm();
-        form.AddField("name", DBManager.username);
-        //form.AddField("score", DBManager.score);
-
-        var sub = new WWW("https://kurial.space/sqlconnect/savedata.php",form);
-        yield return sub;
-        if(sub.text == "0")
+        Debug.Log("Attempting to kurate " + kurationNameField.text);
+        Debug.Log("Kurated by: " + DBManager.username);
+        Debug.Log("Room Type: " + roomType);
+        Debug.Log("Visibility: " + visToggle.isOn);
+        form.AddField("kurationName",kurationNameField.text);
+        form.AddField("kuratorID",DBManager.ID);
+        form.AddField("template",roomType.value);
+        if (visToggle.isOn == true)
         {
-            Debug.Log("Game Saved.");
+            form.AddField("shareStatus","v");
         }
         else
         {
-            Debug.Log("Save failed. Error #" + sub.text);
+            form.AddField("shareStatus","h");
         }
-        DBManager.Logout();
-        SceneManager.LoadScene(0);
+
+        var sub = new WWW("https://kurial.space/php/makeKuration.php",form);
+        yield return sub;
+        Debug.Log(sub.text);
+        if(sub.text[0] == '0')
+        {
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            Debug.Log("Kuration creation failed. Error #" + sub.text);
+        }
+
     }
 
-    public void IncreaseScore(){
-        DBManager.score++;
-        scoreDisplay.text = "Score: " + DBManager.score;
+    public void VerifyInputs()
+    {
+        createButton.interactable = (kurationNameField.text.Length > 1);
     }
-    */
-
 
 }

@@ -32,3 +32,4 @@ public class flavorText : MonoBehaviour
         //flavor.text = quips[Random.Range(0,quips.Length)];
     }
 }
+        

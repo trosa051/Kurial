@@ -89,12 +89,12 @@ public class RoomSelection : MonoBehaviour
             choice.setRoom = sel.Name.dflt;
             break;
       }
-      Sels[roomType.value].SetActive(true);
+      //Sels[roomType.value].SetActive(true);
     }
 
     public void TaskOnClick()
     {
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
     /*switch (roomType.value)
     {
         case 0: //2

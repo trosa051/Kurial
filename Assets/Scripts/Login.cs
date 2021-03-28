@@ -29,7 +29,7 @@ public class Login : MonoBehaviour
         {
             DBManager.username = nameField.text;
             Debug.Log("Succesfully logged in. Welcome " + DBManager.username + "!");
-            DBManager.score = int.Parse(sub.text.Split('\t')[1]);
+            DBManager.ID = int.Parse(sub.text.Split('\t')[1]);
             SceneManager.LoadScene(5);
         }
         else

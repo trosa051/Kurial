@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-
+/*
     public Text playerDisplay;
     public Text scoreDisplay;
 
@@ -48,4 +48,5 @@ public class Game : MonoBehaviour
         scoreDisplay.text = "Score: " + DBManager.score;
     }
 
+*/
 }
