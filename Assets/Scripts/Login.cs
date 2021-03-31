@@ -20,7 +20,7 @@ public class Login : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         Debug.Log("Attempting to login user: " + nameField.text);
-        form.AddField("name",nameField.text);
+        form.AddField("Email",nameField.text);
         form.AddField("password",passwordField.text);
         var sub = new WWW("https://kurial.space/sqlconnect/login.php",form);
         yield return sub;
@@ -28,8 +28,10 @@ public class Login : MonoBehaviour
         if(sub.text[0] == '0')
         {
             DBManager.username = nameField.text;
-            Debug.Log("Succesfully logged in. Welcome " + DBManager.username + "!");
-            DBManager.ID = int.Parse(sub.text.Split('\t')[1]);
+            Debug.Log("Succesfully logged in. Welcome " + DBManager.ID + "!");
+            DBManager.ID = sub.text.Split('\t')[1];
+            DBManager.AccStanding = char.Parse(sub.text.Split('\t')[2]);            
+            DBManager.LastLog = sub.text.Split('\t')[3];
             SceneManager.LoadScene(5);
         }
         else

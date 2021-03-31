@@ -5310,7 +5310,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Your kurations have been viewed XX time(s) '
+  m_Text: 
 --- !u!222 &1475913950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7759,6 +7759,8 @@ MonoBehaviour:
   visToggle: {fileID: 1416400593}
   createButton: {fileID: 1124694181}
   playerDisplay: {fileID: 5848741296433435242}
+  lastDisplay: {fileID: 801679556}
+  AccDisplay: {fileID: 1726946571}
 --- !u!114 &5848741297530870790
 MonoBehaviour:
   m_ObjectHideFlags: 0

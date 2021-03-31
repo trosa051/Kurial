@@ -15,6 +15,8 @@ public class accountLanding : MonoBehaviour
     public Button createButton;
 
     public Text playerDisplay;
+    public Text lastDisplay;
+    public Text AccDisplay;
     //public Text scoreDisplay;
     
     
@@ -22,7 +24,14 @@ public class accountLanding : MonoBehaviour
         if (DBManager.username == null ){
             SceneManager.LoadScene(0);
         }
-        playerDisplay.text = "Welcome " + DBManager.username;
+        playerDisplay.text = "Welcome " + DBManager.ID;
+        lastDisplay.text = "Your last login was: " + DBManager.LastLog;
+        if (DBManager.AccStanding == 'G'){
+            AccDisplay.text = "Your account is in GOOD standing.";
+        }
+        else if (DBManager.AccStanding == 'B'){
+            AccDisplay.text = "You're BANNED. banappeals@kurial.space to appeal this decision.";
+        }
     }
     public void logoutAndBringBack()
     {

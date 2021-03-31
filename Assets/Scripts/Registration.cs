@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Registration : MonoBehaviour
 {
-    public InputField nameField;
+    public InputField nameField;    
+    public InputField emailField;
     public InputField passwordField;
     public InputField confirmPWField;
 
@@ -23,7 +24,8 @@ public class Registration : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         Debug.Log("Attempting to add user: " + nameField.text);
-        form.AddField("name",nameField.text);
+        form.AddField("AccountName",nameField.text);
+        form.AddField("Email",emailField.text);
         form.AddField("password",passwordField.text);
         var sub = new WWW("https://kurial.space/sqlconnect/register.php",form);
         yield return sub;
