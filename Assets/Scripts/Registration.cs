@@ -27,7 +27,9 @@ public class Registration : MonoBehaviour
         form.AddField("AccountName",nameField.text);
         form.AddField("Email",emailField.text);
         form.AddField("password",passwordField.text);
-        var sub = new WWW("https://kurial.space/sqlconnect/register.php",form);
+        // register.php has been moved to public_html/php
+        // var sub = new WWW("https://kurial.space/sqlconnect/register.php",form);
+        var sub = new WWW("https://kurial.space/php/register.php", form);
         yield return sub;
         if (sub.text == "0")
         {

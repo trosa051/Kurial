@@ -22,7 +22,9 @@ public class Login : MonoBehaviour
         Debug.Log("Attempting to login user: " + nameField.text);
         form.AddField("Email",nameField.text);
         form.AddField("password",passwordField.text);
-        var sub = new WWW("https://kurial.space/sqlconnect/login.php",form);
+        // login.php has been moved to public_html/php
+        //var sub = new WWW("https://kurial.space/sqlconnect/login.php", form);
+        var sub = new WWW("https://kurial.space/php/login.php",form);
         yield return sub;
         Debug.Log(sub.text);
         if(sub.text[0] == '0')
