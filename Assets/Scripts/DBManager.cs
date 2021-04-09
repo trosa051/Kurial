@@ -5,7 +5,7 @@ using UnityEngine;
 public static class DBManager
 {
     public static string username;
-    public static string ID;
+    public static string email;
     public static char AccStanding;
     public static string LastLog;
 
@@ -14,6 +14,9 @@ public static class DBManager
     public static void Logout()
     {
         username = null;
+        email = null;
+        AccStanding = '0';
+        LastLog = null;
     }
 
 }   

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/kurationSelection.unity
     guid: 5a73026ab416b064fb6058cf9e3e4164
   - enabled: 1
-    path: Assets/Scenes/createRoom.unity
+    path: Assets/Scenes/creationRoom.unity
     guid: a99f4029fb2ec0941941caa531343b71
   - enabled: 1
     path: Assets/Scenes/testScenes/tjsRoom.unity

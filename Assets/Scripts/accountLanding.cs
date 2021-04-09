@@ -21,10 +21,10 @@ public class accountLanding : MonoBehaviour
     
     
     private void Awake(){
-        if (DBManager.username == null ){
+        if (DBManager.email == null ){
             SceneManager.LoadScene(0);
         }
-        playerDisplay.text = "Welcome " + DBManager.ID;
+        playerDisplay.text = "Welcome " + DBManager.username;
         lastDisplay.text = "Your last login was: " + DBManager.LastLog;
         if (DBManager.AccStanding == 'G'){
             AccDisplay.text = "Your account is in GOOD standing.";
@@ -50,10 +50,10 @@ public class accountLanding : MonoBehaviour
         WWWForm form = new WWWForm();
         Debug.Log("Attempting to kurate " + kurationNameField.text);
         Debug.Log("Kurated by: " + DBManager.username);
-        Debug.Log("Room Type: " + roomType);
+        Debug.Log("Room Type: " + roomType.value);
         Debug.Log("Visibility: " + visToggle.isOn);
         form.AddField("kurationName",kurationNameField.text);
-        form.AddField("kuratorID",DBManager.ID);
+        form.AddField("kuratorName",DBManager.username);
         form.AddField("template",roomType.value);
         if (visToggle.isOn == true)
         {

@@ -11174,7 +11174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1.1
-  m_Text: We're glad you're here.
+  m_Text: 'Did you know: Penguins have knees!'
 --- !u!222 &1816441851
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11217,7 +11217,7 @@ MonoBehaviour:
   - Welcome to flavortown
   - The load was worth the wait.
   - This is a rough prototype
-  - It's good to be golden.
+  - Existence is temporary. Data is eternal.
   - It's good to be golden.
   - It's good to be golden.
   - It's good to be golden.
@@ -12678,7 +12678,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2051329645}
   m_OnClick:
     m_PersistentCalls:
