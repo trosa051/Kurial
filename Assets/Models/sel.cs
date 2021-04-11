@@ -17,6 +17,7 @@ public class sel : MonoBehaviour
 
     [SerializeField]
     public Name setRoom = Name.TJ;
+    public int kurationView = -1;
 
 
     // Start is called before the first frame update
