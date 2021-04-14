@@ -41,6 +41,9 @@ namespace ECM.Controllers
         [SerializeField]
         [Tooltip("Canvas activated by tapping E.")]
         private Canvas PlaceArtCanvas;
+        [SerializeField]
+        [Tooltip("The Script that checks to see if in edit mode")]
+        public sel sr;
 
         #endregion
 
@@ -229,7 +232,7 @@ namespace ECM.Controllers
                 mouseLook.SetCursorLock(false);
                 pause = true;
                 }
-                if (Input.GetKeyDown(KeyCode.E)){
+                if (Input.GetKeyDown(KeyCode.E) && sr.editing == true){
                 PlaceArtCanvas.enabled = true;
                 mouseLook.SetCursorLock(false);
                 pause = true;
@@ -286,7 +289,7 @@ namespace ECM.Controllers
             base.Awake();
             PauseCanvas.enabled = false;
             PlaceArtCanvas.enabled = false;
-
+            sr = (sel)FindObjectOfType<sel>();
             // Cache and initialize this components
 
             mouseLook = GetComponent<Components.MouseLook>();

@@ -48,11 +48,17 @@ public class RoomSelection : MonoBehaviour
         choice = selectionObj.GetComponent<sel>();
         Changed();
     }
+    void OnEnable(){
+        roomType.value = 0;
+        choice = selectionObj.GetComponent<sel>();
+        choice.kurID = -1;
+        Changed();
+    }
 
     // Update is called once per frame
     public void Changed()
     {
-    Debug.Log(roomType.captionText.text+" has been selected.");
+    //Debug.Log(roomType.captionText.text+" has been selected.");
     
     foreach (GameObject i in Sels){
         i.SetActive(false);

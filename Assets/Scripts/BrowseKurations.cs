@@ -7,12 +7,14 @@ using UnityEngine.UI;
 [System.Serializable]
 public struct Kuration
 {
+    public int roomID;
     public string roomName;
     public string kurator;
     public string roomType;
     public string creationDate;
     public string lastUpdate;
-    public Kuration(string name, string krtr, string room, string creation, string lastChanged){
+    public Kuration(int ID, string name, string krtr, string room, string creation, string lastChanged){
+        roomID = ID;
         roomName = name;
         kurator = krtr;
         roomType = room;
@@ -72,7 +74,7 @@ public class BrowseKurations : MonoBehaviour
         yield return sub;
         if(sub.text[0] == '0')
         {
-            //Debug.Log(sub.text);
+            Debug.Log(sub.text);
         }
         else
         {
@@ -82,9 +84,9 @@ public class BrowseKurations : MonoBehaviour
 
 
         string[] rooms = sub.text.Split('\n');
-        for(int i = 0; i < rooms.Length-1; i++){
-        Debug.Log(rooms[i]);
-        }
+        // for(int i = 0; i < rooms.Length-1; i++){
+        // Debug.Log(rooms[]);
+        // }
 
         string[] inf = rooms[0].Split('\t');
         //Debug.Log(inf[1]);
@@ -97,15 +99,17 @@ public class BrowseKurations : MonoBehaviour
         Array.Resize(ref kuRoom,roomsAmt); //(sub.text[3].GetNumericValue()));
 
 
-        List<int> myList = new List<int>();
+        //List<int> myList = new List<int>();
         for(int i = 1 , j = 0; i <= (roomsAmt); i++, j++){
             string[] roomsExplode = rooms[i].Split('\t');
             if(roomsExplode.Length > 0){
-                kuRoom[j].roomName = roomsExplode[1];
-                kuRoom[j].kurator = roomsExplode[2];
-                kuRoom[j].roomType = roomsExplode[3];
-                kuRoom[j].creationDate = roomsExplode[4];
-                kuRoom[j].lastUpdate = roomsExplode[5];
+                kuRoom[j].roomID = Int32.Parse(roomsExplode[1]); //problem
+                kuRoom[j].roomName = roomsExplode[2];
+                kuRoom[j].kurator = roomsExplode[3];
+                kuRoom[j].roomType = roomsExplode[4];
+                kuRoom[j].creationDate = roomsExplode[5];
+                kuRoom[j].lastUpdate = roomsExplode[6];
+                //kuRoom[j].desc = roomsExplode[7];
             }
         }
 

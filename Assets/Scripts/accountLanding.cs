@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +12,7 @@ public class accountLanding : MonoBehaviour
     //public Dropdown templateField;
     public Dropdown roomType;
     public Toggle visToggle;
-
+    public sel choice;
     public Button createButton;
 
     public Text playerDisplay;
@@ -21,20 +22,40 @@ public class accountLanding : MonoBehaviour
     
     
     private void Awake(){
+        callPopulateFields();
+    }
+
+        public void callPopulateFields()
+    {
+        StartCoroutine(PopulateFields());
+    }
+
+
+    IEnumerator PopulateFields()
+    {
         if (DBManager.email == null ){
             SceneManager.LoadScene(0);
         }
-        playerDisplay.text = "Welcome " + DBManager.username;
-        lastDisplay.text = "Your last login was: " + DBManager.LastLog;
+        if(playerDisplay != null) playerDisplay.text = "Welcome " + DBManager.username;
+        if(DBManager.LastLog != "0000-00-00 00:00:00")
+        if(lastDisplay != null) lastDisplay.text = "Your last login was: " + DBManager.LastLog;
+        else if(DBManager.LastLog == "0000-00-00 00:00:00"){
+            lastDisplay.text = "This is your first time logging in. Your previous login will be displayed here on your next visit.";// + DBManager.LastLog;
+        }
         if (DBManager.AccStanding == 'G'){
-            AccDisplay.text = "Your account is in GOOD standing.";
+        if(AccDisplay != null) AccDisplay.text = "Your account is in GOOD standing.";
         }
         else if (DBManager.AccStanding == 'B'){
-            AccDisplay.text = "You're BANNED. banappeals@kurial.space to appeal this decision.";
+        if(AccDisplay != null) AccDisplay.text = "You're BANNED. Email banappeals@kurial.space to appeal this decision.";
         }
+        yield return 0;
     }
+
+
+
     public void logoutAndBringBack()
     {
+        GameObject.Destroy(GameObject.Find("_manager"));
         DBManager.Logout();
         SceneManager.LoadScene(0);
     }
@@ -66,9 +87,13 @@ public class accountLanding : MonoBehaviour
 
         var sub = new WWW("https://kurial.space/php/makeKuration.php",form);
         yield return sub;
-        Debug.Log(sub.text);
+        Debug.Log("PHP said: " + sub.text);
         if(sub.text[0] == '0')
-        {
+        {   
+            choice = GameObject.Find("_manager").GetComponent<sel>();
+            choice.editing = true;
+            string[] phpReturnExplode = sub.text.Split('\t');
+            choice.kurID = Int32.Parse(phpReturnExplode[1]);
             SceneManager.LoadScene(2);
         }
         else

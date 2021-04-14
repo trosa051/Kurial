@@ -6,6 +6,7 @@ TagManager:
   tags:
   - result
   - bod
+  - manager
   layers:
   - Default
   - TransparentFX

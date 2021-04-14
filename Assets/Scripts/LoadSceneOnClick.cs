@@ -24,4 +24,10 @@ public class LoadSceneOnClick : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
 
     }
+
+    public void editable(bool canEdit)
+    {
+      sel choice = GameObject.Find("_manager").GetComponent<sel>();
+      choice.editing = canEdit;
+    }
 }

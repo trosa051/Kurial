@@ -9,6 +9,21 @@ public class kuratorMode : MonoBehaviour
     public GameObject myPrefab;
     public GameObject spawnPoint;
     public RawImage textureToUse;
+    public InputField urlBox;	
+    //KurationID <- grab that from sel
+    public Vector3 Size;
+    public Vector3 Location;
+    public Vector3 Rotation;
+    public InputField AssetName;
+    public InputField AssetDescription;
+    public string url = "https://picsum.photos/200/150";
+    public sel sr;
+
+
+    void Start()
+    {
+        sr = (sel)FindObjectOfType<sel>();
+    }
 
     public GameObject FindClosestEnemy()
     {
@@ -46,17 +61,60 @@ public class kuratorMode : MonoBehaviour
 
     public void noAnchor(){
         GameObject clone = Instantiate(myPrefab, (spawnPoint.transform.position+new Vector3(0,0,0)), spawnPoint.transform.rotation);
-        Renderer rend = clone.GetComponent<Renderer> ();
-        rend.material.mainTexture = textureToUse.texture;
+        //Renderer rend = clone.GetComponent<Renderer> ();
+        //rend.material.mainTexture = textureToUse.texture;
+        Location = clone.transform.position;
+        Rotation = clone.transform.eulerAngles; 
+        callAddAsset();
+
         //clone.GetComponent<Renderer>().material.mainTexture = textureToUse.texture as Texture;
     }
 
     public void yesAnchor(){
         Debug.Log(FindClosestEnemy());
         GameObject clone = Instantiate(myPrefab, (FindClosestEnemy().transform.position+new Vector3(0,0,0)), FindClosestEnemy().transform.rotation);
-        Renderer rend = clone.GetComponent<Renderer> ();
-        rend.material.mainTexture = textureToUse.texture;
+        //Renderer rend = clone.GetComponent<Renderer> ();
+        //rend.material.mainTexture = textureToUse.texture;
+        Location = clone.transform.position;
+        Rotation = clone.transform.eulerAngles;
+        callAddAsset();
     }
+
+
+    public void callAddAsset(){
+        StartCoroutine(AddAsset());
+    }
+
+    IEnumerator AddAsset()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("KurationID",sr.kurID.ToString());
+        form.AddField("AssetURL",urlBox.text);
+        form.AddField("SizeX","1");
+        form.AddField("SizeY","1");
+        form.AddField("SizeZ","1");
+        form.AddField("LocationX",Location.x.ToString());
+        form.AddField("LocationY",Location.y.ToString());
+        form.AddField("LocationZ",Location.z.ToString());
+        form.AddField("RotationX",Rotation.x.ToString());
+        form.AddField("RotationY",Rotation.y.ToString());
+        form.AddField("RotationZ",Rotation.z.ToString());
+        form.AddField("AssetName",AssetName.text);
+        form.AddField("AssetDescription",AssetDescription.text);
+
+        var sub = new WWW("https://kurial.space/php/logAsset.php",form);
+        yield return sub;
+
+        if(sub.text[0] != '0')
+        {
+            Debug.Log("Error: "+sub.text);
+        }
+        else
+        {
+            Debug.Log("Asset created succesfully");
+        }
+    }
+
 }
 
 
