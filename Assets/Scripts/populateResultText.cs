@@ -53,7 +53,7 @@ public class populateResultText : MonoBehaviour
             }*/
             ts.roomType.text = bk.kuRoom[i].roomType;
             ts.creationDate.text = bk.kuRoom[i].creationDate;
-            if(bk.kuRoom[i].lastUpdate == "0000-00-00"){
+            if(bk.kuRoom[i].lastUpdate == "0000-00-00 00:00:00"){
                ts.LastUpdated.text = "Never"; 
             }
             else{   

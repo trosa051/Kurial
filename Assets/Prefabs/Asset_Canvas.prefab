@@ -114,10 +114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cnvs: {fileID: 87911686885360479}
   eovk: {fileID: 0}
-  assetName: Test
+  assetName: 
   assetDesc: 
-  assetID: 82
-  assetURL: https://i.imgur.com/N6y9HV0.jpg
+  assetID: 0
+  assetURL: 
   assetScale: {x: 1, y: 1, z: 1}
   content: {fileID: 25982874061872636}
 --- !u!1 &8468926883969009283
