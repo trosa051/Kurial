@@ -60,11 +60,17 @@ public class kuratorMode : MonoBehaviour
     }*/
 
     public void noAnchor(){
-        GameObject clone = Instantiate(myPrefab, (spawnPoint.transform.position+new Vector3(0,0,0)), spawnPoint.transform.rotation);
+        GameObject clone = Instantiate(myPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        assetCanvasScript acs = clone.GetComponent<assetCanvasScript>();
+        acs.assetName = AssetName.text;
+        acs.assetDesc = AssetDescription.text;
+        acs.assetURL = urlBox.text;
+        //acs.
         //Renderer rend = clone.GetComponent<Renderer> ();
         //rend.material.mainTexture = textureToUse.texture;
         Location = clone.transform.position;
-        Rotation = clone.transform.eulerAngles; 
+        Rotation = clone.transform.eulerAngles;
+        acs.callFetchArt();
         callAddAsset();
 
         //clone.GetComponent<Renderer>().material.mainTexture = textureToUse.texture as Texture;
@@ -73,10 +79,15 @@ public class kuratorMode : MonoBehaviour
     public void yesAnchor(){
         Debug.Log(FindClosestEnemy());
         GameObject clone = Instantiate(myPrefab, (FindClosestEnemy().transform.position+new Vector3(0,0,0)), FindClosestEnemy().transform.rotation);
+        assetCanvasScript acs = clone.GetComponent<assetCanvasScript>();
+        acs.assetName = AssetName.text;
+        acs.assetDesc = AssetDescription.text;
+        acs.assetURL = urlBox.text;
         //Renderer rend = clone.GetComponent<Renderer> ();
         //rend.material.mainTexture = textureToUse.texture;
         Location = clone.transform.position;
         Rotation = clone.transform.eulerAngles;
+        acs.callFetchArt(); 
         callAddAsset();
     }
 
@@ -111,7 +122,7 @@ public class kuratorMode : MonoBehaviour
         }
         else
         {
-            Debug.Log("Asset created succesfully");
+            Debug.Log("Asset added to the db succesfully");
         }
     }
 

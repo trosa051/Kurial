@@ -103,6 +103,7 @@ public class populateKuration : MonoBehaviour
         for (int i = 0; i < kurationCount; i++) 
         {
             Debug.Log("Attempting to create asset #"+i);
+            try{
             assetCanvasScript acs = kanvas.GetComponent<assetCanvasScript>();
             acs.assetName = ass[i].assetName;
             acs.assetDesc = ass[i].assetDesc;
@@ -112,6 +113,11 @@ public class populateKuration : MonoBehaviour
             kanvas.SetActive(true); 
             Instantiate(kanvas, ass[i].assetPosition, Quaternion.Euler(ass[i].assetRotation));
             //acs.callFetchArt();  
+            }
+            catch (Exception e) 
+            {
+                Debug.Log("Could not create Kuration #"+i);
+            }
         }
     }
 }

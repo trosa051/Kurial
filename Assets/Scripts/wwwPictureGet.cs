@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
 
 
 public class wwwPictureGet : MonoBehaviour {
-	public string url = "https://placedog.net/200/150?random";
+	public string url = "";
     public InputField urlBox;
     public RawImage rawIMG;
 	/*
@@ -26,7 +27,15 @@ public class wwwPictureGet : MonoBehaviour {
         {
             uwr.downloadHandler = new DownloadHandlerTexture();
             yield return uwr.SendWebRequest();
-            rawIMG.texture = DownloadHandlerTexture.GetContent(uwr);
+
+            try
+            {
+                rawIMG.texture = DownloadHandlerTexture.GetContent(uwr);
+            }
+            catch (Exception e) 
+            {
+                Debug.Log("A kuration has a broken link!");
+            }
         }
     }
 

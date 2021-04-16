@@ -7,6 +7,9 @@ TagManager:
   - result
   - bod
   - manager
+  - art2DAnchor
+  - view
+  - edit
   layers:
   - Default
   - TransparentFX

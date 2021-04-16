@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ using UnityEngine;
 
 public class assetCanvasScript : MonoBehaviour
 {
+    public Canvas cnvs;
+    public EditOrViewKuration eovk;
     public string assetName = "";
     public string assetDesc = "";
     public int assetID = -1;
@@ -18,7 +21,24 @@ public class assetCanvasScript : MonoBehaviour
     void Awake()
     {
         //set the canvas event camera to the only camera in the scene
+        eovk = GameObject.FindWithTag("Player").GetComponent<EditOrViewKuration>();
+        cnvs.worldCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         callFetchArt();
+    }
+
+    public void OnClick()
+    {
+        editArtScript eas = GameObject.FindWithTag("edit").GetComponent<editArtScript>();
+        eas.assetName.text = assetName;
+        eas.assetDesc.text = assetDesc;
+        eas.assetURL.text = assetURL;
+        eas.callRetrieveAss();
+        viewArtScript vas = GameObject.FindWithTag("view").GetComponent<viewArtScript>();
+        vas.assetName.text = assetName;
+        vas.assetDesc.text = assetDesc;
+        vas.assetURL = assetURL;
+        vas.callRetrieveAss();
+        eovk.OnClick();
     }
 
     public void callFetchArt()
@@ -29,11 +49,19 @@ public class assetCanvasScript : MonoBehaviour
 
     IEnumerator FetchArt()
     {
+        Debug.Log(assetURL);
         using (var uwr = new UnityWebRequest(assetURL, UnityWebRequest.kHttpVerbGET))
         {
             uwr.downloadHandler = new DownloadHandlerTexture();
             yield return uwr.SendWebRequest();
+            try
+            {
             content.texture = DownloadHandlerTexture.GetContent(uwr);
+            }
+            catch (Exception e) 
+            {
+            Debug.Log("A kuration has a broken link!");
+            }
         }
     }
 
