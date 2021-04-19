@@ -3,18 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class populateResultText : MonoBehaviour
+public class myPopulateResultText : MonoBehaviour
 {
 
     //public roomResultText rrt;
-    public BrowseKurations bk;
+    public myKurations bk;
     public GameObject[] results;
     
     // Start is called before the first frame update
     void Start()
     {
         //rrt = rrt.GetComponent<roomResultText>();
-        bk = bk.GetComponent<BrowseKurations>();
+        bk = bk.GetComponent<myKurations>();
     }
 
     // Update is called once per frame
