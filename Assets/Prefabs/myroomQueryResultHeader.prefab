@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 3636825528834819921}
   - component: {fileID: 3636825528834819922}
   - component: {fileID: 3636825528834819926}
-  - component: {fileID: -4725326233730971339}
+  - component: {fileID: 5759487893558487260}
   m_Layer: 5
   m_Name: myroomQueryResultHeader
   m_TagString: result
@@ -642,7 +642,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -4725326233730971339}
+      - m_Target: {fileID: 5759487893558487260}
         m_MethodName: onClick
         m_Mode: 1
         m_Arguments:
@@ -653,7 +653,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-4725326233730971339
+--- !u!114 &5759487893558487260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -662,7 +662,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3636825528834819932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ac5e195c292d3c468a1cc14b625b313, type: 3}
+  m_Script: {fileID: 11500000, guid: aa45884d37b32ff4fa7248c61641305b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   kurID: 0

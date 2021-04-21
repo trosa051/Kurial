@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 
-public class roomResultText : MonoBehaviour
+public class myRoomResultText : MonoBehaviour
 {
     public int kurID;
     public String roomDesc;
@@ -66,9 +66,9 @@ public class roomResultText : MonoBehaviour
         
         if(!bodied){
         bod = Instantiate(resultBod);
-        visibleIfKurator vif = bod.GetComponent<visibleIfKurator>();
+        /*visibleIfKurator vif = bod.GetComponent<visibleIfKurator>();
         vif.resultKurator = kurator.text;
-        vif.CheckName();
+        vif.CheckName();*/
         bod.SetActive(true);
         bod.transform.SetParent(this.transform);
         bod.transform.SetParent(this.transform.parent);

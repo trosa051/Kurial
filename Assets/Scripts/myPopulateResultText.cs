@@ -23,7 +23,7 @@ public class myPopulateResultText : MonoBehaviour
         results = GameObject.FindGameObjectsWithTag("result");
         Array.Resize(ref results,bk.roomsAmt);
         for (int i = 0; i < bk.roomsAmt; i++){
-            var ts = results[i].GetComponent<roomResultText>();
+            var ts = results[i].GetComponent<myRoomResultText>();
             ts.kurID = bk.kuRoom[i].roomID;
             ts.roomName.text = bk.kuRoom[i].roomName;
             ts.kurator.text = bk.kuRoom[i].kurator;

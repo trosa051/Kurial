@@ -5,12 +5,14 @@ using UnityEngine;
 public class copyText : MonoBehaviour
 {
     sel go;
+    string link;
 
     public void onClick()
     {
         go = GameObject.Find("_manager").GetComponent<sel>();
-        GUIUtility.systemCopyBuffer = "https://kurial.space/?kuration="+go.kurID;
-        //WebGLCopyAndPasteAPI.PassCopyToBrowser("https://kurial.space/?kuration="+go.kurID);
-        Debug.Log("https://kurial.space/?kuration="+go.kurID+" Copied to clipboard");
+        link = "https://kurial.space/?kuration="+go.kurID;
+        GUIUtility.systemCopyBuffer = link;
+        WebGLCopyAndPasteAPI.PassCopyToBrowser(link);
+        Debug.Log(link+" Copied to clipboard");
     }
 }
