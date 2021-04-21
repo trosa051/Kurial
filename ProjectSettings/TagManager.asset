@@ -10,6 +10,7 @@ TagManager:
   - art2DAnchor
   - view
   - edit
+  - door
   layers:
   - Default
   - TransparentFX

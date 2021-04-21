@@ -17,6 +17,7 @@ public class Registration : MonoBehaviour
 
     public void callRegister()
     {
+        Debug.Log("ping");
         StartCoroutine(Register());
     }
 
@@ -29,7 +30,8 @@ public class Registration : MonoBehaviour
         form.AddField("password",passwordField.text);
         var sub = new WWW("https://kurial.space/php/register.php",form);
         yield return sub;
-        if (sub.text == "0")
+        Debug.Log(sub.text);
+        if(sub.text[1] == '0')
         {
             Debug.Log("User created successfully.");
             SceneManager.LoadScene(0);

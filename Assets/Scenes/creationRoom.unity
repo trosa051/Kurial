@@ -5724,6 +5724,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackToMain (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 348453045256564902, guid: 3db2fcd581bccf049a9f39c566395f73,
+        type: 3}
+      propertyPath: m_TagString
+      value: door
+      objectReference: {fileID: 0}
     - target: {fileID: 348453045256564922, guid: 3db2fcd581bccf049a9f39c566395f73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13095,6 +13100,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackToMain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 348453045256564902, guid: 3db2fcd581bccf049a9f39c566395f73,
+        type: 3}
+      propertyPath: m_TagString
+      value: door
+      objectReference: {fileID: 0}
     - target: {fileID: 348453045256564922, guid: 3db2fcd581bccf049a9f39c566395f73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16495,6 +16505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackToMain (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 348453045256564902, guid: 3db2fcd581bccf049a9f39c566395f73,
+        type: 3}
+      propertyPath: m_TagString
+      value: door
+      objectReference: {fileID: 0}
     - target: {fileID: 348453045256564922, guid: 3db2fcd581bccf049a9f39c566395f73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19085,6 +19100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BackToMain (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 348453045256564902, guid: 3db2fcd581bccf049a9f39c566395f73,
+        type: 3}
+      propertyPath: m_TagString
+      value: door
       objectReference: {fileID: 0}
     - target: {fileID: 348453045256564922, guid: 3db2fcd581bccf049a9f39c566395f73,
         type: 3}
@@ -27716,6 +27736,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackToMain (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 348453045256564902, guid: 3db2fcd581bccf049a9f39c566395f73,
+        type: 3}
+      propertyPath: m_TagString
+      value: door
+      objectReference: {fileID: 0}
     - target: {fileID: 348453045256564922, guid: 3db2fcd581bccf049a9f39c566395f73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29123,6 +29148,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackToMain
       objectReference: {fileID: 0}
+    - target: {fileID: 348453045256564902, guid: 3db2fcd581bccf049a9f39c566395f73,
+        type: 3}
+      propertyPath: m_TagString
+      value: door
+      objectReference: {fileID: 0}
     - target: {fileID: 348453045256564922, guid: 3db2fcd581bccf049a9f39c566395f73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29387,7 +29417,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1378139686}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.39558133
+  m_Size: 0.38211128
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

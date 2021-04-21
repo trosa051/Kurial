@@ -47,6 +47,10 @@ public class BrowseKurations : MonoBehaviour
         callBrowseKuration();
         iR.OnClick();
     }
+    
+    private void OnEnable(){
+        callBrowseKuration();
+    }
 
     public void callBrowseKuration()
     {

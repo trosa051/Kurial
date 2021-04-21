@@ -37,10 +37,11 @@ public class accountLanding : MonoBehaviour
             SceneManager.LoadScene(0);
         }
         if(playerDisplay != null) playerDisplay.text = "Welcome " + DBManager.username;
-        if(DBManager.LastLog != "0000-00-00 00:00:00")
-        if(lastDisplay != null) lastDisplay.text = "Your last login was: " + DBManager.LastLog;
-        else if(DBManager.LastLog == "0000-00-00 00:00:00"){
-            lastDisplay.text = "This is your first time logging in. Your previous login will be displayed here on your next visit.";// + DBManager.LastLog;
+        if(DBManager.LastLog[0] != '0'){
+            if(lastDisplay != null) lastDisplay.text = "Your last login was: " + DBManager.LastLog;
+        }
+        else if(DBManager.LastLog[0] == '0'){
+            if(lastDisplay != null) lastDisplay.text = "This is your first time logging in. Your previous login will be displayed here on your next visit.";// + DBManager.LastLog;
         }
         if (DBManager.AccStanding == 'G'){
         if(AccDisplay != null) AccDisplay.text = "Your account is in GOOD standing.";

@@ -96,7 +96,21 @@ public class myKurations : MonoBehaviour
             if(roomsExplode.Length > 0){
                 kuRoom[j].roomID = Int32.Parse(roomsExplode[1]); //problem
                 kuRoom[j].roomName = roomsExplode[2];
-                kuRoom[j].kurator = roomsExplode[3];
+                switch(roomsExplode[3]){
+                    case "v":
+                    kuRoom[j].kurator = "Visible";
+                    break;
+                    case "h":
+                    kuRoom[j].kurator = "Hidden";
+                    break;
+                    case "c":
+                    kuRoom[j].kurator = "Deleted";
+                    break;
+                    default:
+                    kuRoom[j].kurator = "Messed up";
+                    break;
+                }
+                //kuRoom[j].kurator = roomsExplode[3];
                 kuRoom[j].roomType = roomsExplode[4];
                 kuRoom[j].creationDate = roomsExplode[5];
                 kuRoom[j].lastUpdate = roomsExplode[6];

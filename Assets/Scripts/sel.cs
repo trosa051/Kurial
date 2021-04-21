@@ -21,6 +21,7 @@ public class sel : MonoBehaviour
     public int kurID = -1; //this is the kurationID
     public bool editing = false;
 
+    //public GameObject[] respawns;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +32,14 @@ public class sel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       if (Application.absoluteURL.StartsWith("https://kurial.space/?kuration="))
+       {   //disable doors
+            GameObject[] doors = GameObject.FindGameObjectsWithTag("door");
+            foreach(GameObject i in doors) {i.SetActive(false);}
+       }
     }
     void killMe()
-    {
+    { 
         Destroy(this.gameObject);
     }
 }
