@@ -114,10 +114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cnvs: {fileID: 87911686885360479}
   eovk: {fileID: 0}
-  assetName: 
-  assetDesc: 
-  assetID: 0
-  assetURL: 
+  assetName: dogeog
+  assetDesc: dogeog
+  assetID: 661
+  assetURL: https://placedog.net/200/150?random
   assetScale: {x: 1, y: 1, z: 1}
   content: {fileID: 25982874061872636}
 --- !u!1 &2727983052164012921

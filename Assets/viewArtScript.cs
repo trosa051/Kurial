@@ -14,6 +14,8 @@ public class viewArtScript : MonoBehaviour
     //public InputField urlBox;
     public RawImage rawIMG;
 
+    int assetID = -1;
+
     // Update is called once per frame
     void Start()
     {

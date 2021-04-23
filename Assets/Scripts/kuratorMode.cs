@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//REMAKE THIS SCRIPT
+
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +19,8 @@ public class kuratorMode : MonoBehaviour
     public Vector3 Rotation;
     public InputField AssetName;
     public InputField AssetDescription;
-    public string url = "https://picsum.photos/200/150";
+    public string url = "";
+    int assetID = -1;
     public sel sr;
 
 
@@ -45,19 +49,6 @@ public class kuratorMode : MonoBehaviour
         return closest;
     }
 
-    // Update is called once per frame
-   /* void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {                      
-            noAnchor();
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {                      
-            yesAnchor();
-        }
-    }*/
 
     public void noAnchor(){
         GameObject clone = Instantiate(myPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
@@ -71,8 +62,8 @@ public class kuratorMode : MonoBehaviour
         Location = clone.transform.position;
         Rotation = clone.transform.eulerAngles;
         acs.callFetchArt();
-        callAddAsset();
-
+        callAddAsset(acs.assetID);
+        acs.assetID = assetID;
         //clone.GetComponent<Renderer>().material.mainTexture = textureToUse.texture as Texture;
     }
 
@@ -83,12 +74,14 @@ public class kuratorMode : MonoBehaviour
         acs.assetName = AssetName.text;
         acs.assetDesc = AssetDescription.text;
         acs.assetURL = urlBox.text;
+        //acs.assetURL = urlBox.text;
         //Renderer rend = clone.GetComponent<Renderer> ();
         //rend.material.mainTexture = textureToUse.texture;
         Location = clone.transform.position;
         Rotation = clone.transform.eulerAngles;
         acs.callFetchArt(); 
-        callAddAsset();
+        callAddAsset(acs.assetID);
+        //acs.assetID = assetID;
     }
 
 
@@ -131,7 +124,8 @@ public class kuratorMode : MonoBehaviour
         var wub = new WWW("https://kurial.space/php/getLatestAsset.php",form2);
         yield return wub;
         //at this point 
-        Debug.Log(wub);
+        Debug.Log("Asset # " + wub.text.Split('\t')[1] + " uploaded.");
+        assetID = int.Parse(wub.text.Split('\t')[1]);
 
     }
 

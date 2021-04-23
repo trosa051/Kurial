@@ -17,6 +17,8 @@ public class editArtScript : MonoBehaviour
     public string assetNamestr = "";
     public string assetDescstr = "";
     public string assetURLstr = "";
+
+    int assetID = -1;
     
     //public InputField urlBox;
     public RawImage rawIMG;
