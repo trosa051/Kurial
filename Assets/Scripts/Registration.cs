@@ -11,7 +11,7 @@ public class Registration : MonoBehaviour
     public InputField passwordField;
     public InputField confirmPWField;
 
-    public GameObject passwordWarning;
+    public Text passwordWarning;
 
     public Button submitButton;
 
@@ -39,12 +39,16 @@ public class Registration : MonoBehaviour
         else
         {
             Debug.Log("User created falied. Error #" + sub.text);
+            if(sub.text[1] == '3') passwordWarning.text = "Username already taken";
+            if(sub.text[2] == 'b') passwordWarning.text = "Email already in use";
+            //errmsg.SetActive(true);
         }
     }
 
     public void VerifyInputs()
     {
-        passwordWarning.SetActive(!(passwordField.text == confirmPWField.text));
+        if(passwordField.text != confirmPWField.text) passwordWarning.text = "Passwords do not match!";
+        if(passwordField.text == confirmPWField.text) passwordWarning.text = "";
         submitButton.interactable = (nameField.text.Length >= 8 && passwordField.text.Length >= 8 && passwordField.text == confirmPWField.text);
     }
 }

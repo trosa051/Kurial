@@ -124,6 +124,15 @@ public class kuratorMode : MonoBehaviour
         {
             Debug.Log("Asset added to the db succesfully");
         }
+        //The problem here is that I need to have the assetID so I can edit the correct asset.
+        //To correct this im going to attempt to add a second WWW in this IEnumerator
+        WWWForm form2 = new WWWForm();
+        form2.AddField("KurationID",sr.kurID.ToString());
+        var wub = new WWW("https://kurial.space/php/getLatestAsset.php",form2);
+        yield return wub;
+        //at this point 
+        Debug.Log(wub);
+
     }
 
 }

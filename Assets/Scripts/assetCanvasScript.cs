@@ -60,7 +60,8 @@ public class assetCanvasScript : MonoBehaviour
             }
             catch (Exception e) 
             {
-            Debug.Log("A kuration has a broken link!");
+            Debug.Log("Failed to Upload: "+assetURL);
+            //Debug.Log("A kuration has a broken link!");
             }
         }
     }

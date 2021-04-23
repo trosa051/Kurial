@@ -8,7 +8,8 @@ public class Login : MonoBehaviour
 {
     public InputField nameField;
     public InputField passwordField;
-
+    public GameObject err;
+    public Text errmsg;
     public Button submitButton;
 
     public void callLogin()
@@ -37,6 +38,11 @@ public class Login : MonoBehaviour
         else
         {
             Debug.Log("User login failed. Error #" + sub.text);
+            err.SetActive(true);
+            if(sub.text[0] == '5') errmsg.text = "Username not found";
+            if(sub.text[0] == '6') errmsg.text = "Incorrect Password";
+            //errmsg.SetActive(true);
+
         }
 
     }
