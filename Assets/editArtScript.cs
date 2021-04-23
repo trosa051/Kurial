@@ -23,14 +23,24 @@ public class editArtScript : MonoBehaviour
 
 
     // Update is called once per frame
+    
+    public void OnChange(){
+    assetNamestr = assetName.text;
+    assetDescstr = assetDesc.text;
+    assetURLstr = assetURL.text;
+    }
+    
+    void Start(){
+        OnChange();
+    }
+
     void OnEnable()
     {
-        assetName.text = "beans";
-        assetDesc.text = "beans";
-        assetURL.text = "beans";
+        /*
         assetName.text = assetNamestr;
         assetDesc.text = assetDescstr;
         assetURL.text = assetURLstr;
+        */
         pauseCanvas.enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -38,6 +48,15 @@ public class editArtScript : MonoBehaviour
         //clickonce.ping();
     }
 
+    /*public void assName(UnityEngine.UI.Text val){
+        assetNamestr = float.Parse(val.text);
+    }
+    public void assDesc(UnityEngine.UI.Text val){
+        assetDescstr = float.Parse(val.text);
+    }
+    public void assURL(UnityEngine.UI.Text val){
+        assetURLstr = float.Parse(val.text);
+    }*/
 
     public void callRetrieveAss() {
         StartCoroutine(RetrieveAss());

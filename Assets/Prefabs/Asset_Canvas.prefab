@@ -116,8 +116,8 @@ MonoBehaviour:
   eovk: {fileID: 0}
   assetName: 
   assetDesc: 
-  assetID: 6
-  assetURL: https://upload.wikimedia.org/wikipedia/commons/9/92/Ba_b_do8mag_c6_big.png
+  assetID: 0
+  assetURL: 
   assetScale: {x: 1, y: 1, z: 1}
   content: {fileID: 25982874061872636}
 --- !u!1 &2727983052164012921

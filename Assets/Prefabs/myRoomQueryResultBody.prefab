@@ -570,11 +570,22 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 2186040701848168556}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2379727070035452243}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2186040701982396928
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,11 +700,22 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 2186040701982396931}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7749818430940490631}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2186040702020325402
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Report
+  m_Text: Delete
 --- !u!1 &2186040702100694603
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,10 +860,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 11
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 8
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -849,7 +871,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Like
+  m_Text: Change Visibility
 --- !u!1 &2186040702389271402
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +885,8 @@ GameObject:
   - component: {fileID: 2186040702389271406}
   - component: {fileID: 2186040702389271405}
   - component: {fileID: 2186040702389271404}
+  - component: {fileID: 2379727070035452243}
+  - component: {fileID: 7749818430940490631}
   m_Layer: 5
   m_Name: myRoomQueryResultBody
   m_TagString: bod
@@ -972,6 +996,32 @@ MonoBehaviour:
   m_EffectColor: {r: 0.9294118, g: 0.6392157, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: 1}
   m_UseGraphicAlpha: 0
+--- !u!114 &2379727070035452243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186040702389271402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6ea397913aabb4aade104aafc1ab7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poof: {fileID: 2186040702389271402}
+--- !u!114 &7749818430940490631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186040702389271402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea85c016b9212824ebcc13df6bbda23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poof: {fileID: 0}
 --- !u!1 &2186040702728422319
 GameObject:
   m_ObjectHideFlags: 0

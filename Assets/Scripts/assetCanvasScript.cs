@@ -32,6 +32,7 @@ public class assetCanvasScript : MonoBehaviour
         eas.assetName.text = assetName;
         eas.assetDesc.text = assetDesc;
         eas.assetURL.text = assetURL;
+        eas.OnChange();
         eas.callRetrieveAss();
         viewArtScript vas = GameObject.FindWithTag("view").GetComponent<viewArtScript>();
         vas.assetName.text = assetName;
