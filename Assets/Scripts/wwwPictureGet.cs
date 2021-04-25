@@ -9,6 +9,7 @@ public class wwwPictureGet : MonoBehaviour {
 	public string url = "";
     public InputField urlBox;
     public RawImage rawIMG;
+    public Texture def;
 	/*
 	IEnumerator Start() {
 		// Start a download of the given URL
@@ -20,6 +21,12 @@ public class wwwPictureGet : MonoBehaviour {
 		// assign texture
 		rawIMG.texture = www.GetTexture;
 	}*/
+    // void OnEnable()
+    // {
+    //     //Debug.Log("PrintOnDisable: script was disabled");
+    //     rawIMG.texture = def;
+    // }
+    
     IEnumerator pong()
     {
         url = urlBox.text;
@@ -39,8 +46,8 @@ public class wwwPictureGet : MonoBehaviour {
         }
     }
 
-    private void Update() {
-        
+    private void Awake() {
+        rawIMG.texture = def;
     }
 
     public void ping() {

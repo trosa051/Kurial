@@ -114,12 +114,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cnvs: {fileID: 87911686885360479}
   eovk: {fileID: 0}
-  assetName: dogeog
-  assetDesc: dogeog
-  assetID: 661
-  assetURL: https://placedog.net/200/150?random
+  assetName: 
+  assetDesc: 
+  assetID: -1
+  assetURL: 
   assetScale: {x: 1, y: 1, z: 1}
   content: {fileID: 25982874061872636}
+  isNaturalSpawn: 0
 --- !u!1 &2727983052164012921
 GameObject:
   m_ObjectHideFlags: 0

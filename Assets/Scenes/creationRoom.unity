@@ -2397,7 +2397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2525,8 +2525,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 2132495285}
   m_HandleRect: {fileID: 657550937}
   m_Direction: 0
-  m_MinValue: -4
-  m_MaxValue: 6
+  m_MinValue: -10
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -2534,6 +2534,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 207479562}
         m_MethodName: SliderControl
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1203630702}
+        m_MethodName: ySliderControl
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3376,8 +3387,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 2104919915}
   m_HandleRect: {fileID: 886853569}
   m_Direction: 0
-  m_MinValue: -4
-  m_MaxValue: 6
+  m_MinValue: -10
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -3385,6 +3396,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 250749738}
         m_MethodName: SliderControl
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1203630702}
+        m_MethodName: xSliderControl
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3754,6 +3776,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 90930224}
         m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1203630702}
+        m_MethodName: OnEdit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5067,6 +5100,7 @@ MonoBehaviour:
   url: https://placedog.net/200/150?random
   urlBox: {fileID: 1066060202}
   rawIMG: {fileID: 349048584}
+  def: {fileID: 0}
 --- !u!114 &349048584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8602,7 +8636,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1203630702}
-        m_MethodName: OnChange
+        m_MethodName: OnChangeLite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9975,7 +10009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -10578,6 +10612,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1203630699}
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1203630702}
+        m_MethodName: OnBack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17307,6 +17352,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1203630703}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1146406733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18604,6 +18660,7 @@ GameObject:
   - component: {fileID: 1203630701}
   - component: {fileID: 1203630700}
   - component: {fileID: 1203630702}
+  - component: {fileID: 1203630703}
   m_Layer: 5
   m_Name: EditArtCanvas
   m_TagString: edit
@@ -18709,15 +18766,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9b22ac7a1e8ff48b05f6fba1eb8c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gob: {fileID: 0}
   clickonce: {fileID: 349048583}
   pauseCanvas: {fileID: 1079922871}
   assetName: {fileID: 1461426198}
   assetDesc: {fileID: 558885028}
   assetURL: {fileID: 1066060202}
+  assetXScale: {fileID: 826049850}
+  assetYScale: {fileID: 1098097953}
+  sillyXSlider: {fileID: 250749737}
+  sillyYSlider: {fileID: 207479561}
   assetNamestr: 
   assetDescstr: 
   assetURLstr: 
+  assetID: -1
+  assetXScalef: 1
+  assetYScalef: 1
   rawIMG: {fileID: 349048584}
+--- !u!114 &1203630703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203630697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a475619068e869149b2bc089076c7174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ass: 0
+  poof: {fileID: 0}
 --- !u!1001 &1204472950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21792,6 +21871,7 @@ MonoBehaviour:
   url: https://placedog.net/200/150?random
   urlBox: {fileID: 0}
   rawIMG: {fileID: 1373141981}
+  def: {fileID: 0}
 --- !u!114 &1373141981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23737,7 +23817,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1203630702}
-        m_MethodName: OnChange
+        m_MethodName: OnChangeLite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25957,6 +26037,7 @@ MonoBehaviour:
   url: https://placedog.net/200/150?random
   urlBox: {fileID: 2106735315874782169}
   rawIMG: {fileID: 2106735316761540121}
+  def: {fileID: 2800000, guid: 2ba7d1cf4d54c2647ac0ca50676d6151, type: 3}
 --- !u!4 &1657634601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6107996840592400561, guid: aa7542f89f3d244489bfc21912d1dc1a,

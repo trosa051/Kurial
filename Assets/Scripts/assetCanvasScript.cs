@@ -16,22 +16,48 @@ public class assetCanvasScript : MonoBehaviour
     public string assetURL = "";
     public Vector3 assetScale = new Vector3(1,1,1);
     public RawImage content;
+    public bool isNaturalSpawn = true;
+    
 
     // Start is called before the first frame update
+    void Start()
+    {
+        /*assetName = "";
+        assetDesc = "";
+        isNaturalSpawn = true;
+        assetURL = "";
+        assetID = -1;*/
+        //callFetchArt();
+    }
+
     void Awake()
     {
         //set the canvas event camera to the only camera in the scene
         eovk = GameObject.FindWithTag("Player").GetComponent<EditOrViewKuration>();
         cnvs.worldCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-        callFetchArt();
+        //sel choice = GameObject.Find("_manager").GetComponent<sel>();
+        if (isNaturalSpawn == true) callFetchArt();
+        //if viewing kurations we need this to happen to actually load them. Otherwise dont do it bc its taken care of in kuratorMode.
+        //The way whtat I checked that was with the sel script pretty sure
+
     }
 
     public void OnClick()
     {
+        deleteAsset del = GameObject.Find("EditArtCanvas").GetComponent<deleteAsset>();
+        del.poof = this.gameObject;
+        del.ass = assetID;
+
+        //scaleUpdate
+
         editArtScript eas = GameObject.FindWithTag("edit").GetComponent<editArtScript>();
+        eas.gob = this;
         eas.assetName.text = assetName;
         eas.assetDesc.text = assetDesc;
         eas.assetURL.text = assetURL;
+        eas.assetXScalef = this.gameObject.transform.GetChild(0).transform.localScale.x;
+        eas.assetYScalef = this.gameObject.transform.GetChild(0).transform.localScale.y;
+        eas.assetID = assetID;
         eas.OnChange();
         eas.callRetrieveAss();
         viewArtScript vas = GameObject.FindWithTag("view").GetComponent<viewArtScript>();
@@ -67,9 +93,34 @@ public class assetCanvasScript : MonoBehaviour
         }
     }
 
+
+    
+    public void xSliderControl(System.Single val){
+        //inInput.text = string.Format("{0:G}", val);
+        assetScale.x = val;
+    }
+
+    // public void xInputControl(UnityEngine.UI.Text val){
+    //     //inSlide.value = float.Parse(val.text);
+    //     assetScale.x = float.Parse(val).ToString();
+    // }
+
+    public void ySliderControl(System.Single val){
+        //inInput.text = string.Format("{0:G}", val);
+        assetScale.y = val;
+    }
+
+    // public void yInputControl(UnityEngine.UI.Text val){
+    //     //inSlide.value = float.Parse(val.text);
+    //     assetScale.y = float.Parse(val);
+    // }
+
+
     // Update is called once per frame
     void Update()
     {
         content.transform.localScale = assetScale;
+
+        //this.gameObject.transform.GetChild(0).transform.localScale.x;
     }
 }

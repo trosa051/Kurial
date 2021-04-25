@@ -24,10 +24,10 @@ public class EditOrViewKuration : MonoBehaviour
 
     public void editKuration(){
         editCanvas.enabled = true;
-        editArtScript eas = GameObject.FindWithTag("edit").GetComponent<editArtScript>();
+        /*editArtScript eas = GameObject.FindWithTag("edit").GetComponent<editArtScript>();
         eas.assetNamestr = "beans";
         eas.assetDescstr = "beans";
-        eas.assetURLstr = "beans";
+        eas.assetURLstr = "beans";*/
     }
 
     public void viewKuration(){

@@ -37,6 +37,10 @@ public class sel : MonoBehaviour
             GameObject[] doors = GameObject.FindGameObjectsWithTag("door");
             foreach(GameObject i in doors) {i.SetActive(false);}
        }
+       if (editing == false){
+            GameObject[] anchors = GameObject.FindGameObjectsWithTag("art2DAnchor");
+            foreach(GameObject i in anchors) {Destroy(i);}   
+       }
     }
     void killMe()
     { 

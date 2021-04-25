@@ -7,9 +7,11 @@ public class scaleUpdate : MonoBehaviour
 {
     public Slider inSlide;
     public InputField inInput;
-    void OnEnable() {
-        inSlide.value = 1f;
-        inInput.text = string.Format("{0:G}", 1f);
+    
+    void Awake() {
+        //inInput.text = string.Format("{0:G}", 1f);
+        inSlide.value = float.Parse(inInput.text);
+        //inInput.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
     }
 
     public void SliderControl(System.Single val){

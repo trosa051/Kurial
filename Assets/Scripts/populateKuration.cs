@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [System.Serializable]
 public struct Asset
@@ -105,6 +106,7 @@ public class populateKuration : MonoBehaviour
             Debug.Log("Attempting to create asset #"+i);
             try{
             assetCanvasScript acs = kanvas.GetComponent<assetCanvasScript>();
+            acs.isNaturalSpawn = true;
             acs.assetName = ass[i].assetName;
             acs.assetDesc = ass[i].assetDesc;
             acs.assetID = ass[i].assetID;
@@ -112,6 +114,7 @@ public class populateKuration : MonoBehaviour
             acs.assetScale = ass[i].assetScale;
             kanvas.SetActive(true); 
             Instantiate(kanvas, ass[i].assetPosition, Quaternion.Euler(ass[i].assetRotation));
+            acs.isNaturalSpawn = false;
             //acs.callFetchArt();  
             }
             catch (Exception e) 

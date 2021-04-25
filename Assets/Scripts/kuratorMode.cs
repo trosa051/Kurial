@@ -10,6 +10,7 @@ public class kuratorMode : MonoBehaviour
 {
 
     public GameObject myPrefab;
+    GameObject clone;
     public GameObject spawnPoint;
     public RawImage textureToUse;
     public InputField urlBox;	
@@ -51,46 +52,67 @@ public class kuratorMode : MonoBehaviour
 
 
     public void noAnchor(){
-        GameObject clone = Instantiate(myPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
-        assetCanvasScript acs = clone.GetComponent<assetCanvasScript>();
-        acs.assetName = AssetName.text;
-        acs.assetDesc = AssetDescription.text;
-        acs.assetURL = urlBox.text;
-        //acs.
-        //Renderer rend = clone.GetComponent<Renderer> ();
-        //rend.material.mainTexture = textureToUse.texture;
-        Location = clone.transform.position;
-        Rotation = clone.transform.eulerAngles;
-        acs.callFetchArt();
-        callAddAsset(acs.assetID);
-        acs.assetID = assetID;
-        //clone.GetComponent<Renderer>().material.mainTexture = textureToUse.texture as Texture;
+        callAddAsset(false);
+        // GameObject clone = Instantiate(myPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        // assetCanvasScript acs = clone.GetComponent<assetCanvasScript>();
+        // acs.assetName = AssetName.text;
+        // acs.assetDesc = AssetDescription.text;
+        // acs.assetURL = urlBox.text;
+        // //acs.
+        // //Renderer rend = clone.GetComponent<Renderer> ();
+        // //rend.material.mainTexture = textureToUse.texture;
+        // Location = clone.transform.position;
+        // Rotation = clone.transform.eulerAngles;
+        // acs.callFetchArt();
+        // callAddAsset();
+        // acs.assetID = assetID;
+        // //clone.GetComponent<Renderer>().material.mainTexture = textureToUse.texture as Texture;
     }
 
     public void yesAnchor(){
-        Debug.Log(FindClosestEnemy());
-        GameObject clone = Instantiate(myPrefab, (FindClosestEnemy().transform.position+new Vector3(0,0,0)), FindClosestEnemy().transform.rotation);
-        assetCanvasScript acs = clone.GetComponent<assetCanvasScript>();
+        callAddAsset(true);
+        // Debug.Log(FindClosestEnemy());
+        // GameObject clone = Instantiate(myPrefab, (FindClosestEnemy().transform.position+new Vector3(0,0,0)), FindClosestEnemy().transform.rotation);
+        // assetCanvasScript acs = clone.GetComponent<assetCanvasScript>();
+        // acs.assetName = AssetName.text;
+        // acs.assetDesc = AssetDescription.text;
+        // acs.assetURL = urlBox.text;
+        // //acs.assetURL = urlBox.text;
+        // //Renderer rend = clone.GetComponent<Renderer> ();
+        // //rend.material.mainTexture = textureToUse.texture;
+        // Location = clone.transform.position;
+        // Rotation = clone.transform.eulerAngles;
+        // acs.callFetchArt(); 
+        // callAddAsset();
+        // //acs.assetID = assetID;
+    }
+
+
+    public void callAddAsset(bool isAnchored){
+        StartCoroutine(AddAsset(isAnchored));
+    }
+
+    IEnumerator AddAsset(bool isAnchored)
+    {
+        if (isAnchored)
+        {
+            Debug.Log(FindClosestEnemy()); //logs the anchor used
+            clone = Instantiate(myPrefab, (FindClosestEnemy().transform.position+new Vector3(0,0,0)), FindClosestEnemy().transform.rotation);
+        }
+        else if (!isAnchored)
+        {
+            clone = Instantiate(myPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        }
+        //GameObject.Find("_manager").GetComponent<sel>().editing = false;
+        assetCanvasScript acs = clone.GetComponent<assetCanvasScript>(); 
+        acs.isNaturalSpawn = false;
         acs.assetName = AssetName.text;
         acs.assetDesc = AssetDescription.text;
         acs.assetURL = urlBox.text;
-        //acs.assetURL = urlBox.text;
-        //Renderer rend = clone.GetComponent<Renderer> ();
-        //rend.material.mainTexture = textureToUse.texture;
         Location = clone.transform.position;
         Rotation = clone.transform.eulerAngles;
-        acs.callFetchArt(); 
-        callAddAsset(acs.assetID);
-        //acs.assetID = assetID;
-    }
+        acs.callFetchArt(); //This gets the right art
 
-
-    public void callAddAsset(){
-        StartCoroutine(AddAsset());
-    }
-
-    IEnumerator AddAsset()
-    {
         WWWForm form = new WWWForm();
         form.AddField("KurationID",sr.kurID.ToString());
         form.AddField("AssetURL",urlBox.text);
@@ -125,8 +147,8 @@ public class kuratorMode : MonoBehaviour
         yield return wub;
         //at this point 
         Debug.Log("Asset # " + wub.text.Split('\t')[1] + " uploaded.");
-        assetID = int.Parse(wub.text.Split('\t')[1]);
-
+        acs.assetID = int.Parse(wub.text.Split('\t')[1]);
+        acs.isNaturalSpawn = true;
     }
 
 }
