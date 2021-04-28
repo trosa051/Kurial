@@ -39,7 +39,7 @@ public class Login : MonoBehaviour
         {
             Debug.Log("User login failed. Error #" + sub.text);
             err.SetActive(true);
-            if(sub.text[0] == '5') errmsg.text = "Username not found";
+            if(sub.text[0] == '5') errmsg.text = "Email not found";
             if(sub.text[0] == '6') errmsg.text = "Incorrect Password";
             //errmsg.SetActive(true);
 

@@ -11,6 +11,7 @@ TagManager:
   - view
   - edit
   - door
+  - canvas
   layers:
   - Default
   - TransparentFX

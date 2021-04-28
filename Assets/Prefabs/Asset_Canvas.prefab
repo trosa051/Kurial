@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6123715867557501001}
   m_Layer: 0
   m_Name: Asset_Canvas
-  m_TagString: Untagged
+  m_TagString: canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,10 +114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cnvs: {fileID: 87911686885360479}
   eovk: {fileID: 0}
-  assetName: 
-  assetDesc: 
-  assetID: -1
-  assetURL: 
+  assetName: moono
+  assetDesc: monke
+  assetID: 688
+  assetURL: https://static01.nyt.com/images/2020/10/29/style/28MOON-01/oakImage-1603985177355-mediumSquareAt3X.jpg
   assetScale: {x: 1, y: 1, z: 1}
   content: {fileID: 25982874061872636}
   isNaturalSpawn: 0

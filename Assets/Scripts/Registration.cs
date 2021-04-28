@@ -48,6 +48,9 @@ public class Registration : MonoBehaviour
     public void VerifyInputs()
     {
         if(passwordField.text != confirmPWField.text) passwordWarning.text = "Passwords do not match!";
+        if(nameField.text.Length < 8) passwordWarning.text = "Username too short";
+        if(passwordField.text.Length < 8 ) passwordWarning.text = "Password too short";
+        //if(emailField.text.Length < 8) passwordWarning.text = "Email too short";
         if(passwordField.text == confirmPWField.text) passwordWarning.text = "";
         submitButton.interactable = (nameField.text.Length >= 8 && passwordField.text.Length >= 8 && passwordField.text == confirmPWField.text);
     }

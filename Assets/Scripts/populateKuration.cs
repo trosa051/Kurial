@@ -64,6 +64,16 @@ public class populateKuration : MonoBehaviour
         StartCoroutine(PopulateRoom());
     }
 
+    public void reloadRoom()
+    {
+        //Destroy all assets
+        GameObject[] canv = GameObject.FindGameObjectsWithTag("canvas");
+        foreach(GameObject i in canv) {Destroy(i);}
+        ass = new List<Asset>();
+        StartCoroutine(PopulateRoom());
+    }
+
+
     IEnumerator PopulateRoom()
     {
         WWWForm form = new WWWForm();
